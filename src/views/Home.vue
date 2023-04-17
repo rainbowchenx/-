@@ -66,7 +66,7 @@
 <script>
 import {getData} from '../api'
 import * as echarts from 'echarts'
-import tab from '@/store/tab';
+
 export default {
     data(){
         return {

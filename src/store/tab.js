@@ -19,14 +19,18 @@ export default{
         },
         // 更新面包屑
         selectMenu(state,val){
-            // 判断添加数据是否为首页
             if(val.name !== 'home'){
-                // 判断点击的item是否在tablist中，没有就添加进来
-                const index= state.tabList.findIndex(item=> item.name === val.name)
-                if(index===-1){
+                const index = state.tabList.findIndex((item) => item.name === val.name)
+                if(index === -1){
                     state.tabList.push(val)
                 }
             }
+        },
+        closeTag(state,item){
+             state.tabList.splice(state.tabList.findIndex((val)=>{
+                val.name === item.name
+            }),1)
+
         }
     }
 }

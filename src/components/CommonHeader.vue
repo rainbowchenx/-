@@ -3,9 +3,9 @@
     <div class = 'l-content'>
       <el-button style="margin-right: 20px;" @click="handleMenu" icon="el-icon-menu" size="mini"></el-button>
       <!-- 面包屑 -->
-        <el-breadcrumb separator="/">
-          <el-breadcrumb-item v-for="item in tags" :key="item.path" :to="{ path: item.path }">{{item.label}}</el-breadcrumb-item>
-        </el-breadcrumb>
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item v-for="item in tags" :key="item.path" :to="{ path: item.path }">{{ item.label }}</el-breadcrumb-item>
+      </el-breadcrumb>
 
 
       </span>
@@ -17,7 +17,6 @@
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item>退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -41,9 +40,12 @@ export default {
     },
     computed:{
       ...mapState({
-        tags: state => state.tab.tabList
+        tags:  state => state.tab.tabList
       })
-    }
+    },
+
+      
+
 }
 </script>
 

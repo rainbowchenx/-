@@ -1,11 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+// 导入所有的子路由
 import Home from '../views/Home.vue'
 import User from '../views/User.vue'
 import Main from '../views/Main.vue'
-
-// import CommonAside from '../components/CommonAside.vue'
 import Mall from '../views/Mall.vue'
 import PageOne from '../views/PageOne'
 import PageTwo from '../views/PageTwo'
