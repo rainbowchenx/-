@@ -3,7 +3,7 @@ import homeApi from './mockServeData/home'
 import user from './mockServeData/user'
 import permission from './mockServeData/permission'
 
-// 定义mock请求拦截
+// 定义mock请求拦截,主要拦截显示在home页面上的数据
 Mock.mock('/api/home/getData', homeApi.getStatisticalData)
 
 // 用户列表的数据
