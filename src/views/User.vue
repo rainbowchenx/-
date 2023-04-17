@@ -154,13 +154,14 @@ export default {
     cancel() {
       this.handleClose();
     },
-    // 定义删除指定字段
+    // 定义编辑指定字段
     handleEdit(row) {
       this.modalType = 1;
       this.dialogVisible = true;
       // 不要直接赋值要深拷贝
       this.form = JSON.parse(JSON.stringify(row));
     },
+    // 定义删除指定字段
     handleDelete(row) {
       this.$confirm("此操作将永久删除该文件, 是否继续?", "提示", {
         confirmButtonText: "确定",
