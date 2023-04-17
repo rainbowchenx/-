@@ -8,6 +8,8 @@ import Mall from '../views/Mall.vue'
 import PageOne from '../views/PageOne'
 import PageTwo from '../views/PageTwo'
 
+import Login from '../views/Login'
+
 
 Vue.use(VueRouter)
 // 创建路由组件
@@ -16,6 +18,7 @@ const routes=[
     { 
         path : '/', 
         component: Main,
+        name:'Main',
         redirect:'/home',//重定向
         children:[
             { path : '/home', name:'home' ,component: Home },//主页面
@@ -26,6 +29,12 @@ const routes=[
             
         ]
     },
+    {
+        path:'/login',
+        name:'login',
+        component:Login,
+
+    }
 
 ]
 // 创建router实例

@@ -11,12 +11,13 @@
       </span>
     </div>
     <div class = 'r-content'>
-      <el-dropdown>
+      <el-dropdown @command="handleClick">
         <span class="el-dropdown-link">
           <img src="../assets/images/user.png" class="user">
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item command="cancel">退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -28,7 +29,7 @@
 <script>
 // import { cli } from 'webpack-dev-server';
 import {mapState} from 'vuex'
-
+import Cookie from 'js-cookie'
 export default {
     data(){
         return{}
@@ -36,7 +37,17 @@ export default {
     methods:{
       handleMenu(){
         this.$store.commit('collapseMenu')
+      },
+      handleClick(command){
+        if(command === 'cancel'){
+          Cookie.remove('token')
+          // 跳转到登录页面
+          Cookie.remove('menu')
+          this.$router.push('login')
+        }
+
       }
+
     },
     computed:{
       ...mapState({

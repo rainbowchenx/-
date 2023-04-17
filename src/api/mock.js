@@ -12,4 +12,4 @@ Mock.mock('/api/user/edit', 'post', user.updateUser)
 Mock.mock('/api/user/del', 'post', user.deleteUser)
 Mock.mock(/api\/user\/getUser/, user.getUserList)
 
-// Mock.mock(/api\/permission\/getMenu/, 'post',permission.getMenu)
+Mock.mock(/api\/permission\/getMenu/, 'post',permission.getMenu)
