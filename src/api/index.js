@@ -9,7 +9,8 @@ export const getData = () => {
 export const getUser = (params) => {
     console.log(params, 'params')
     // 返回用户列表
-    return http.get('/user/getUser', params)
+        return http.get('/user/getUser', params)
+    
 }
 
 export const addUser = (data) => {

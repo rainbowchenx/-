@@ -47,9 +47,10 @@ export default{
             const menu = JSON.parse(Cookie.get('menu'))
             state.menu = menu
             // 组装动态路由的数据
+            // console.log(state.menu)
             const menuArray = []
             menu.forEach(item => {
-                if(item.children){
+                if(item.children){ 
                     item.children = item.children.map((item)=>{
                         item.component = ()=> import(`../views/${item.url}`)
                         return item
@@ -60,7 +61,9 @@ export default{
                     menuArray.push(item)
                 }            
             })
-            // 路由的动态添加
+            console.log(menuArray)
+            
+            // 路由的动态添加.动态的给主路由上添加子路由，防止没有权限的人通过域名访问
             menuArray.forEach((item)=>{
                 router.addRoute('Main',item)
             })

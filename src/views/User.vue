@@ -61,7 +61,7 @@
     </div>
 
     <div class="common-tabel">
-    <el-table stripe height="90%" :data="tableData" style="width: 100%">
+    <el-table stripe height="90%" :data="tableData" style="width: 100%"  v-loading="!isloading">
       <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
       <el-table-column prop="sex" label="性别" width="180">
         <template slot-scope="scope">
@@ -121,8 +121,14 @@ export default {
       },
       userForm:{
         name:''
-      }
+      },
+      isloading:false,
     };
+  },
+  watch:{
+    tableData(){
+      this.isloading=true
+    }
   },
   methods: {
     // 提交用户表单
@@ -186,10 +192,13 @@ export default {
     },
     // 获取列表的数据
     getList() {
-      getUser({params:{...this.userForm,...this.pageData}}).then(({ data }) => {
+      setTimeout(() => {
+          getUser({params:{...this.userForm,...this.pageData}}).then(({ data }) => {
         this.tableData = data.list;
         this.total = data.count? data.count:0
-      });
+      });  
+      }, 1000);
+
     },
     handleAdd() {
       this.modalType = 0;
@@ -203,7 +212,9 @@ export default {
     // 列表的查询
     onSubmit(){
       this.getList()
-    }
+    },
+
+
   },
   mounted() {
     this.getList();

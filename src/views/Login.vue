@@ -38,7 +38,7 @@ export default {
     },
     methods:{
       submit(){
-        //  const token = Mock.Random.guid()
+        //  const token =  Mock.Random.guid()
         // //  将token存入cookie用于不同页面间的通信
         //  Cookie.set('token',token)
         // 校验
