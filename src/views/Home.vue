@@ -19,14 +19,6 @@
        <!-- tableData是数据左下角卡片 -->
       <el-card style="margin-top: 20px;height: 460px;">
         <el-table :data="tableData" style="width: 100%">
-          <!-- <el-table-column prop="name" label="课程" >
-          </el-table-column>
-          <el-table-column prop="todayBuy" label="今日购买" >
-          </el-table-column>
-          <el-table-column prop="monthBuy" label="每月购买"> 
-          </el-table-column>
-          <el-table-column prop="totalBuy" label="总共购买"> 
-          </el-table-column> -->
           <el-table-column v-for = "(val, key) in tableLabel" :prop='key' :label='val' :key="key"> 
           </el-table-column>
         </el-table>
@@ -71,43 +63,6 @@ export default {
     data(){
         return {
             tableData: [],
-                // {
-                //     name: 'oppo',
-                //     todayBuy: 100,
-                //     monthBuy: 300,
-                //     totalBuy: 800
-                // },
-                // {
-                //     name: 'vivo',
-                //     todayBuy: 100,
-                //     monthBuy: 300,
-                //     totalBuy: 800
-                // },
-                // {
-                //     name: '苹果',
-                //     todayBuy: 100,
-                //     monthBuy: 300,
-                //     totalBuy: 800
-                // },
-                // {
-                //     name: '小米',
-                //     todayBuy: 100,
-                //     monthBuy: 300,
-                //     totalBuy: 800
-                // },
-                // {
-                //     name: '三星',
-                //     todayBuy: 100,
-                //     monthBuy: 300,
-                //     totalBuy: 800
-                // },
-                // {
-                //     name: '魅族',
-                // todayBuy: 100,
-                //     monthBuy: 300,
-                //     totalBuy: 800
-                // }
-
         // 用于遍历生成表头
         tableLabel:{
             name: '课程',
@@ -160,7 +115,7 @@ export default {
     },
     mounted(){
       getData().then(({data})=>{
-        console.log(data)
+        // console.log(data)
         const {tableData} = data.data
         this.tableData = tableData
 
