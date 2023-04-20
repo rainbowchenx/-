@@ -21,7 +21,8 @@ mock模拟数据，拦截请求
 "mockjs": "^1.1.0",
 "vue": "^2.6.14",
 "vue-router": "^3.6.5",
-"vuex": "^3.6.2"
+"vuex": "^3.6.2",
+"nprogress": "^0.2.0",
 ```
 ![页面展示](https://github.com/rainbowchenx/Back-end-management-system/blob/main/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E5%B1%95%E7%A4%BA%E3%80%91/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230418162406.png)
 
